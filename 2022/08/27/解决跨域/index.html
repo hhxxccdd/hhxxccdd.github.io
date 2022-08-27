@@ -16,21 +16,22 @@
   <meta name="author" content="Hxc">
   <meta name="keywords" content="">
   
-    <meta name="description" content="title:解决跨域date:2022-08-27 19:25:30tags:springbootcategories:后端开发  在前后端分离开发时，前后端端口不同，会出现跨域问题，本文中的方法是从后端的角度解决跨域 在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。 123456789101112131415161718">
+    <meta name="description" content="在前后端分离开发时，前后端端口不同，会出现跨域问题，本文中的方法是从后端的角度解决跨域 在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。 123456789101112131415161718192021222324import org.springframework.context.annotation.Bean;impo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HHxc的博客">
+<meta property="og:title" content="解决跨域">
 <meta property="og:url" content="http://example.com/2022/08/27/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/index.html">
 <meta property="og:site_name" content="HHxc的博客">
-<meta property="og:description" content="title:解决跨域date:2022-08-27 19:25:30tags:springbootcategories:后端开发  在前后端分离开发时，前后端端口不同，会出现跨域问题，本文中的方法是从后端的角度解决跨域 在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。 123456789101112131415161718">
+<meta property="og:description" content="在前后端分离开发时，前后端端口不同，会出现跨域问题，本文中的方法是从后端的角度解决跨域 在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。 123456789101112131415161718192021222324import org.springframework.context.annotation.Bean;impo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-27T11:25:30.262Z">
-<meta property="article:modified_time" content="2022-08-27T11:39:55.084Z">
+<meta property="article:published_time" content="2022-08-27T11:25:30.000Z">
+<meta property="article:modified_time" content="2022-08-27T11:43:38.759Z">
 <meta property="article:author" content="Hxc">
+<meta property="article:tag" content="springboot">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>HHxc的博客</title>
+  <title>解决跨域 - HHxc的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="解决跨域"></span>
           
         </div>
 
@@ -235,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1k 字
         
       </span>
     
@@ -246,7 +247,7 @@
         
         
         
-          10 分钟
+          9 分钟
         
       </span>
     
@@ -292,15 +293,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">解决跨域</h1>
             
             
               <div class="markdown-body">
                 
-                <hr>
-<p>title:解决跨域<br>date:2022-08-27 19:25:30<br>tags:springboot<br>categories:后端开发</p>
-<hr>
-<p>在前后端分离开发时，前后端端口不同，会出现跨域问题，本文中的方法是从后端的角度解决跨域</p>
+                <p>在前后端分离开发时，前后端端口不同，会出现跨域问题，本文中的方法是从后端的角度解决跨域</p>
 <p>在Springboot项目里加上这个配置文件<code>CorsConfig.java</code>，重启之后即可实现跨域访问，前端无需再配置跨域。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.springframework.context.annotation.Bean;<br><span class="hljs-keyword">import</span> org.springframework.context.annotation.Configuration;<br><span class="hljs-keyword">import</span> org.springframework.web.cors.CorsConfiguration;<br><span class="hljs-keyword">import</span> org.springframework.web.cors.UrlBasedCorsConfigurationSource;<br><span class="hljs-keyword">import</span> org.springframework.web.filter.CorsFilter;<br><br><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CorsConfig</span> &#123;<br>    <br><span class="hljs-comment">// 当前跨域请求最大有效时长。这里默认1天</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> <span class="hljs-variable">MAX_AGE</span> <span class="hljs-operator">=</span> <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>;<br><br><span class="hljs-meta">@Bean</span><br><span class="hljs-keyword">public</span> CorsFilter <span class="hljs-title function_">corsFilter</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">UrlBasedCorsConfigurationSource</span> <span class="hljs-variable">source</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UrlBasedCorsConfigurationSource</span>();<br>    <span class="hljs-type">CorsConfiguration</span> <span class="hljs-variable">corsConfiguration</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CorsConfiguration</span>();<br>    corsConfiguration.addAllowedOrigin(<span class="hljs-string">&quot;*&quot;</span>); <span class="hljs-comment">// 1 设置访问源地址</span><br>    corsConfiguration.addAllowedHeader(<span class="hljs-string">&quot;*&quot;</span>); <span class="hljs-comment">// 2 设置访问源请求头</span><br>    corsConfiguration.addAllowedMethod(<span class="hljs-string">&quot;*&quot;</span>); <span class="hljs-comment">// 3 设置访问源请求方法</span><br>    corsConfiguration.setMaxAge(MAX_AGE);<br>    source.registerCorsConfiguration(<span class="hljs-string">&quot;/**&quot;</span>, corsConfiguration); <span class="hljs-comment">// 4 对接口配置跨域设置</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CorsFilter</span>(source);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -313,6 +311,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="category-chain-item">后端开发</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/springboot/">#springboot</a>
+      
+    </div>
   
 </div>
 
@@ -322,7 +348,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>解决跨域</div>
       <div>http://example.com/2022/08/27/解决跨域/</div>
     </div>
     <div class="license-meta">
@@ -365,9 +391,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/27/Vue%E9%9B%86%E6%88%90axios/" title="">
+                      <a href="/2022/08/27/Vue%E9%9B%86%E6%88%90axios/" title="Vue集成axios">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">Vue集成axios</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
