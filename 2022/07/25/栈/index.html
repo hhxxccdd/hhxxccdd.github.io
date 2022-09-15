@@ -16,15 +16,15 @@
   <meta name="author" content="Hxc">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.使用数组实现栈1.栈的基本操作1.初始化栈12345public ArrayStack(int maxSize)&amp;#123;      this.maxSize&#x3D;maxSize;      stack &#x3D; new int[this.maxSize];&amp;#125;  2.判栈满12345public boolean isFull()&amp;#123;      return top &#x3D;&#x3D; maxSiz">
+    <meta name="description" content="栈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="栈">
 <meta property="og:url" content="http://example.com/2022/07/25/%E6%A0%88/index.html">
 <meta property="og:site_name" content="HHxc的博客">
-<meta property="og:description" content="1.使用数组实现栈1.栈的基本操作1.初始化栈12345public ArrayStack(int maxSize)&amp;#123;      this.maxSize&#x3D;maxSize;      stack &#x3D; new int[this.maxSize];&amp;#125;  2.判栈满12345public boolean isFull()&amp;#123;      return top &#x3D;&#x3D; maxSiz">
+<meta property="og:description" content="栈">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-25T12:19:02.000Z">
-<meta property="article:modified_time" content="2022-07-25T13:09:36.510Z">
+<meta property="article:modified_time" content="2022-09-15T09:53:50.150Z">
 <meta property="article:author" content="Hxc">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
@@ -298,7 +298,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="1-使用数组实现栈"><a href="#1-使用数组实现栈" class="headerlink" title="1.使用数组实现栈"></a>1.使用数组实现栈</h2><h3 id="1-栈的基本操作"><a href="#1-栈的基本操作" class="headerlink" title="1.栈的基本操作"></a>1.栈的基本操作</h3><h4 id="1-初始化栈"><a href="#1-初始化栈" class="headerlink" title="1.初始化栈"></a>1.初始化栈</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayStack</span><span class="hljs-params">(<span class="hljs-type">int</span> maxSize)</span>&#123;<br>      <span class="hljs-built_in">this</span>.maxSize=maxSize;<br>      stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-built_in">this</span>.maxSize];<br><br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="1-使用数组实现栈"><a href="#1-使用数组实现栈" class="headerlink" title="1.使用数组实现栈"></a>1.使用数组实现栈</h2><h3 id="1-栈的基本操作"><a href="#1-栈的基本操作" class="headerlink" title="1.栈的基本操作"></a>1.栈的基本操作</h3><h4 id="1-初始化栈"><a href="#1-初始化栈" class="headerlink" title="1.初始化栈"></a>1.初始化栈</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayStack</span><span class="hljs-params">(<span class="hljs-type">int</span> maxSize)</span>&#123;<br>      <span class="hljs-built_in">this</span>.maxSize=maxSize;<br>      stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-built_in">this</span>.maxSize];<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h4 id="2-判栈满"><a href="#2-判栈满" class="headerlink" title="2.判栈满"></a>2.判栈满</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span>&#123;<br><br>      <span class="hljs-keyword">return</span> top == maxSize-<span class="hljs-number">1</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
